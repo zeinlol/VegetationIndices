@@ -20,13 +20,14 @@
  *                                                                         *
  ***************************************************************************/
 """
-from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
-from PyQt4.QtGui import QAction, QIcon, QFileDialog
-from vegetation_indices_tool import VITool
+from PyQt5.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QAction, QFileDialog
+from .vegetation_indices_tool import VITool
 # Initialize Qt resources from file resources.py
-import resources
+# import resources
 # Import the code for the dialog
-from vegetation_indices_dialog import VegetationIndicesDialog
+from .vegetation_indices_dialog import VegetationIndicesDialog
 import os.path
 
 
@@ -59,7 +60,6 @@ class VegetationIndices:
             if qVersion() > '4.3.3':
                 QCoreApplication.installTranslator(self.translator)
 
-
         # Declare instance attributes
         self.actions = []
         self.menu = self.tr(u'&Vegetation Indices')
@@ -82,18 +82,17 @@ class VegetationIndices:
         # noinspection PyTypeChecker,PyArgumentList,PyCallByClass
         return QCoreApplication.translate('VegetationIndices', message)
 
-
     def add_action(
-        self,
-        icon_path,
-        text,
-        callback,
-        enabled_flag=True,
-        add_to_menu=True,
-        add_to_toolbar=True,
-        status_tip=None,
-        whats_this=None,
-        parent=None):
+            self,
+            icon_path,
+            text,
+            callback,
+            enabled_flag=True,
+            add_to_menu=True,
+            add_to_toolbar=True,
+            status_tip=None,
+            whats_this=None,
+            parent=None):
         """Add a toolbar icon to the toolbar.
 
         :param icon_path: Path to the icon for this action. Can be a resource
@@ -176,10 +175,10 @@ class VegetationIndices:
 
         # очистка списков
         self.clear_boxes(
-                self.dlg.redBox,
-                self.dlg.nirBox,
-                self.dlg.blueBox
-            )
+            self.dlg.redBox,
+            self.dlg.nirBox,
+            self.dlg.blueBox
+        )
 
         # фомирование нового контента
         layers = list()
@@ -222,7 +221,7 @@ class VegetationIndices:
         self.tool = VITool(
             index_name,
             red_band, nir_band, output,
-            blue_band, L, a 
+            blue_band, L, a
         )
 
         if self.tool.index == "NDVI":
@@ -234,9 +233,7 @@ class VegetationIndices:
         elif self.tool.index == "ARVI":
             self.tool.calc_arvi()
 
-
     """----------END OF CUSTOM FUNCTIONS-----------"""
-
 
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
@@ -247,7 +244,6 @@ class VegetationIndices:
             self.iface.removeToolBarIcon(action)
         # remove the toolbar
         del self.toolbar
-
 
     def run(self):
         """Run method that performs all the real work"""

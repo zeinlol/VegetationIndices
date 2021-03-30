@@ -14,7 +14,7 @@ __copyright__ = 'Copyright 2018, Alexander Semonchik'
 
 import unittest
 
-from PyQt4.QtGui import QDialogButtonBox, QDialog
+from PyQt5.QtWidgets import QDialogButtonBox, QDialog
 
 from vegetation_indices_dialog import VegetationIndicesDialog
 

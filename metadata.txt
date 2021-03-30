@@ -8,11 +8,11 @@
 
 [general]
 name=Vegetation Indices
-qgisMinimumVersion=2.0
+qgisMinimumVersion=3.0
 description=This plugin allow calculate vegetation indices
 version=0.1
-author=Alexander Semonchik
-email=mymail@mail.com
+author=Nickolai Borshchov
+email=nickolaiborshchov@mail.com
 
 about=Provide a brief description of the plugin and its purpose.
 
