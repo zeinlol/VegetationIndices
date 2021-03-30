@@ -1,3 +1,3 @@
 # About  
 
-Plugin to calculate vegetation indices (NDVI, RVI, SAVI, ARVI) in QGIS 2.18
+Update plugin to calculate vegetation indices (NDVI, RVI, SAVI, ARVI) for QGIS 3, maded by [AlexanderdeI/VegetationIndices](https://github.com/AlexanderdeI/VegetationIndices)
