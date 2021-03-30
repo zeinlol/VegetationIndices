@@ -1,4 +1,3 @@
-<html>
 <body>
 <h3>Plugin Builder Results</h3>
 
@@ -39,4 +38,3 @@ For information on writing PyQGIS code, see <a href="http://loc8.cc/pyqgis_resou
 &copy;2011-2018 GeoApt LLC - geoapt.com 
 </p>
 </body>
-</html>
